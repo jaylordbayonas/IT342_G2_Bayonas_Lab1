@@ -1,15 +1,56 @@
 # MiniApp – User Registration and Authentication
 
-Project workspace ready for development.
+A full-stack application with user registration and authentication functionality.
 
 ## Project Structure
 ```
 IT342_G2_Bayonas_Lab1/
-├── backend/    (Spring Boot API - Empty)
-├── web/        (React App - Empty)
-├── mobile/     (Android Kotlin - Empty)
-├── docs/       (Documentation)
+├── backend/    # Spring Boot API (In Development)
+├── web/        # React + Vite Frontend
+├── mobile/     # Android Kotlin App (Planned)
+├── docs/       # Project Documentation
 └── README.md
 ```
 
-We'll build this step by step.
+## Technology Stack
+
+### Frontend (Web)
+- React 18
+- Vite
+- React Router DOM
+
+### Backend (API)
+- Spring Boot (Java)
+- REST API
+
+### Mobile
+- Android (Kotlin)
+
+## Getting Started
+
+### Web Application
+```bash
+cd web
+npm install
+npm run dev
+```
+
+### Backend API
+```bash
+cd backend
+# Instructions coming soon
+```
+
+## Features
+- User Registration
+- User Login/Authentication
+- Dashboard Interface
+
+## Development Status
+- ✅ Web Frontend - In Progress
+- 🔄 Backend API - Planned
+- 🔄 Mobile App - Planned
+- 🔄 Documentation - In Progress
+
+## Team
+Group 2 - Bayonas
