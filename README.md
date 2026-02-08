@@ -52,5 +52,3 @@ cd backend
 - 🔄 Mobile App - Planned
 - 🔄 Documentation - In Progress
 
-## Team
-Group 2 - Bayonas
