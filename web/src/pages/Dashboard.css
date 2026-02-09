@@ -1,0 +1,280 @@
+    .dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background: #0a1929;
+    }
+
+    .sidebar {
+    width: 260px;
+    background: #0f1f30;
+    border-right: 1px solid #1e3a5f;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    }
+
+    .sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 30px;
+    margin-bottom: 40px;
+    }
+
+    .sidebar-title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    }
+
+    .sidebar-subtitle {
+    color: #8b9aaf;
+    font-size: 13px;
+    }
+
+    .sidebar-nav {
+    flex: 1;
+    padding: 0 20px;
+    }
+
+    .nav-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    color: #8b9aaf;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+    text-align: left;
+    }
+
+    .nav-item:hover {
+    background: #1a2c3f;
+    color: #fff;
+    }
+
+    .nav-item.active {
+    background: #2d4a6f;
+    color: #fff;
+    }
+
+    .nav-item svg {
+    flex-shrink: 0;
+    }
+
+    .logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 30px;
+    background: transparent;
+    border: none;
+    color: #ef4444;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    }
+
+    .logout-btn:hover {
+    background: rgba(239, 68, 68, 0.1);
+    }
+
+    .main-content {
+    flex: 1;
+    padding: 40px 60px;
+    overflow-y: auto;
+    }
+
+    .content-section {
+    max-width: 1200px;
+    animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+    .section-header {
+    margin-bottom: 40px;
+    }
+
+    .section-label {
+    color: #8b9aaf;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+    }
+
+    .section-title {
+    color: #fff;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+    color: #8b9aaf;
+    font-size: 16px;
+    }
+
+    .account-status {
+    background: #0f1f30;
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid #1e3a5f;
+    }
+
+    .status-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    }
+
+    .status-grid {
+    display: grid;
+    gap: 30px;
+    }
+
+    .status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #1e3a5f;
+    }
+
+    .status-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    }
+
+    .status-label {
+    color: #8b9aaf;
+    font-size: 15px;
+    font-weight: 500;
+    }
+
+    .status-value {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    }
+
+    .profile-card {
+    background: #0f1f30;
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid #1e3a5f;
+    }
+
+    .profile-avatar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    }
+
+    .avatar-circle {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+    border: 4px solid #1e3a5f;
+    }
+
+    .profile-info {
+    text-align: center;
+    margin-bottom: 40px;
+    }
+
+    .profile-name {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    }
+
+    .profile-email {
+    color: #8b9aaf;
+    font-size: 16px;
+    }
+
+    .profile-details {
+    display: grid;
+    gap: 25px;
+    }
+
+    .detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #1a2c3f;
+    border-radius: 12px;
+    }
+
+    .detail-label {
+    color: #8b9aaf;
+    font-size: 14px;
+    font-weight: 500;
+    }
+
+    .detail-value {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    }
+
+    .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #8b9aaf;
+    font-size: 18px;
+    }
+
+    @media (max-width: 968px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #1e3a5f;
+    }
+
+    .main-content {
+        padding: 30px 20px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+    }
