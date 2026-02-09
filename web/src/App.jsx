@@ -1,21 +1,31 @@
     import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
-    import { useState } from 'react'
-    import Register from './pages/Register'
-    import Login from './pages/Login'
-    import Dashboard from './pages/Dashboard'
+import { useState, useEffect } from 'react'
+import Register from './pages/Register'
+import Login from './pages/Login'
+import Dashboard from './pages/Dashboard'
+import ProtectedRoute from './components/ProtectedRoute'
+import { isAuthenticated, getUserData, logout as authLogout } from './utils/auth'
 
-    function App() {
-    // Simple state to track if user is logged in (just for UI demo)
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
-    const [currentUser, setCurrentUser] = useState(null)
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [currentUser, setCurrentUser] = useState(null)
 
-    const handleLogin = (userData) => {
-        setIsLoggedIn(true)
-        setCurrentUser(userData)
+  // Check if user is already logged in on mount
+  useEffect(() => {
+    if (isAuthenticated()) {
+      setIsLoggedIn(true)
+      const userData = getUserData()
+      setCurrentUser(userData)
     }
+  }, [])
 
-    const handleLogout = () => {
-        setIsLoggedIn(false)
+  const handleLogin = (userData) => {
+    setIsLoggedIn(true)
+    setCurrentUser(userData)
+  }
+
+  const handleLogout = () => {
+    authLogout() // Clear localStorage
         setCurrentUser(null)
     }
 

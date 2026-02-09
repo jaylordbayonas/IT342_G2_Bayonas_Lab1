@@ -1,18 +1,61 @@
         import { useNavigate } from 'react-router-dom'
-        import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { userAPI } from '../services/api'
+import { logout as authLogout, getUserData } from '../utils/auth'
 
-        const Dashboard = ({ user, onLogout }) => {
-        const navigate = useNavigate()
-        const [activeView, setActiveView] = useState('dashboard')
+const Dashboard = ({ user, onLogout }) => {
+  const navigate = useNavigate()
+  const [activeView, setActiveView] = useState('dashboard')
+  const [userData, setUserData] = useState(user)
+  const [loading, setLoading] = useState(!user)
+  const [error, setError] = useState(null)
 
-        const handleLogout = () => {
-            onLogout()
-            navigate('/login')
+  // Fetch current user data from backend on mount
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        // Try to get user from API
+        const response = await userAPI.getCurrentUser()
+        setUserData(response)
+        setError(null)
+      } catch (err) {
+        console.error('Failed to fetch user data:', err)
+        // Fallback to localStorage data
+        const localUser = getUserData()
+        if (localUser) {
+          setUserData(localUser)
+        } else {
+          setError('Failed to load user data')
         }
+      } finally {
+        setLoading(false)
+      }
+    }
 
-        // Default user data if none provided
-        const displayUser = user || {
-            userId: 1,
+    if (!user) {
+      fetchUserData()
+    }
+  }, [user])
+
+  const handleLogout = () => {
+    authLogout()
+    onLogout()
+    navigate('/login')
+  }
+
+  // Show loading state
+  if (loading) {
+    return (
+      <div className="dashboard-layout">
+        <div className="loading-container">
+          <p>Loading your profile...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Default user data if none provided
+  const displayUser = userData || {
             username: 'johndoe',
             email: 'john@example.com',
             role: 'USER',
