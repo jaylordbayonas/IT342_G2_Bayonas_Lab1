@@ -11,31 +11,73 @@
         android:layout_height="wrap_content"
         android:padding="24dp">
 
+        <!-- Logo and Branding -->
+        <LinearLayout
+            android:id="@+id/branding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp">
+
+            <TextView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="M"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/logo_background"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MiniApp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary" />
+        </LinearLayout>
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="4dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/card_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/branding"
+            android:layout_marginTop="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="24dp">
+                android:padding="32dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/login"
-                    android:textSize="32sp"
+                    android:textSize="28sp"
                     android:textStyle="bold"
                     android:textColor="@color/text_primary"
-                    android:gravity="center"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome back! Please login to continue"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
                     android:layout_marginBottom="32dp" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -44,7 +86,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     app:boxStrokeColor="@color/primary"
-                    app:hintTextColor="@color/primary"
+                    app:hintTextColor="@color/text_light"
+                    app:boxBackgroundColor="@color/background_secondary"
+                    app:boxStrokeWidth="2dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -53,6 +101,8 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/username"
                         android:inputType="text"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint"
                         android:maxLines="1" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,8 +112,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
                     app:boxStrokeColor="@color/primary"
-                    app:hintTextColor="@color/primary"
+                    app:hintTextColor="@color/text_light"
+                    app:boxBackgroundColor="@color/background_secondary"
+                    app:boxStrokeWidth="2dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
                     app:endIconMode="password_toggle"
+                    app:endIconTint="@color/text_secondary"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -72,6 +129,8 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/password"
                         android:inputType="textPassword"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint"
                         android:maxLines="1" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -81,8 +140,10 @@
                     android:layout_height="56dp"
                     android:text="@string/login"
                     android:textSize="16sp"
+                    android:textStyle="bold"
                     android:layout_marginBottom="16dp"
-                    app:cornerRadius="8dp" />
+                    app:cornerRadius="12dp"
+                    app:backgroundTint="@color/primary" />
 
                 <ProgressBar
                     android:id="@+id/progressBar"
@@ -90,6 +151,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:visibility="gone"
+                    android:indeterminateTint="@color/primary"
                     android:layout_marginBottom="16dp" />
 
                 <LinearLayout

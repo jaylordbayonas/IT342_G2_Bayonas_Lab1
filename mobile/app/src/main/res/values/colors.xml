@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Material Design Base Colors -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,10 +8,31 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="primary">#2196F3</color>
-    <color name="primary_dark">#1976D2</color>
-    <color name="accent">#FF4081</color>
-    <color name="background">#F5F5F5</color>
-    <color name="text_primary">#212121</color>
-    <color name="text_secondary">#757575</color>
+    
+    <!-- App Theme Colors (matching web design) -->
+    <color name="primary">#4a90e2</color>
+    <color name="primary_dark">#3a7bc8</color>
+    <color name="primary_light">#5fa3f5</color>
+    <color name="accent">#ef4444</color>
+    
+    <!-- Background Colors -->
+    <color name="background">#0a1929</color>
+    <color name="background_secondary">#0f1f30</color>
+    <color name="card_background">#1a2c3f</color>
+    <color name="surface">#132f4c</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#ffffff</color>
+    <color name="text_secondary">#8b9aaf</color>
+    <color name="text_hint">#5b6b7f</color>
+    <color name="text_light">#e0e6ed</color>
+    
+    <!-- Border & Divider Colors -->
+    <color name="border">#2d4a6f</color>
+    <color name="divider">#1e3a5f</color>
+    
+    <!-- Status Colors -->
+    <color name="error">#ef4444</color>
+    <color name="success">#10b981</color>
+    <color name="warning">#f59e0b</color>
 </resources>

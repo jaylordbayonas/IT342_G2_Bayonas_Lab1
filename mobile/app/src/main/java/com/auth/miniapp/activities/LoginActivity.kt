@@ -81,10 +81,11 @@ class LoginActivity : AppCompatActivity() {
                     
                     // Save token and user info
                     tokenManager.saveToken(loginResponse.token)
+                    // Note: Backend doesn't return user ID in login response, will be fetched from /me endpoint
                     tokenManager.saveUserInfo(
-                        loginResponse.user.id,
-                        loginResponse.user.username,
-                        loginResponse.user.email
+                        -1L, // ID will be updated when dashboard loads
+                        loginResponse.username,
+                        loginResponse.email
                     )
 
                     showLoading(false)

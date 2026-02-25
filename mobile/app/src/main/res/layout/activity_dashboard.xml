@@ -10,10 +10,10 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/primary"
+        android:background="@color/background_secondary"
         android:elevation="4dp"
         app:title="@string/dashboard"
-        app:titleTextColor="@color/white"
+        app:titleTextColor="@color/text_primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,15 +35,16 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="4dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/card_background"
                 android:layout_marginBottom="24dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="24dp">
+                    android:padding="28dp">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -52,30 +53,39 @@
                         android:textSize="24sp"
                         android:textStyle="bold"
                         android:textColor="@color/text_primary"
-                        android:gravity="center"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Your Profile Information"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary"
                         android:layout_marginBottom="24dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_marginBottom="12dp">
+                        android:layout_marginBottom="16dp"
+                        android:padding="12dp"
+                        android:background="@color/surface">
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Username:"
-                            android:textSize="16sp"
+                            android:textSize="15sp"
                             android:textStyle="bold"
-                            android:textColor="@color/text_secondary" />
+                            android:textColor="@color/text_light" />
 
                         <TextView
                             android:id="@+id/usernameText"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:textSize="16sp"
+                            android:textSize="15sp"
                             android:textColor="@color/text_primary"
                             tools:text="john_doe" />
                     </LinearLayout>
@@ -84,23 +94,25 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_marginBottom="12dp">
+                        android:layout_marginBottom="16dp"
+                        android:padding="12dp"
+                        android:background="@color/surface">
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Email:"
-                            android:textSize="16sp"
+                            android:textSize="15sp"
                             android:textStyle="bold"
-                            android:textColor="@color/text_secondary" />
+                            android:textColor="@color/text_light" />
 
                         <TextView
                             android:id="@+id/emailText"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:textSize="16sp"
+                            android:textSize="15sp"
                             android:textColor="@color/text_primary"
                             tools:text="john@example.com" />
                     </LinearLayout>
@@ -108,23 +120,25 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:padding="12dp"
+                        android:background="@color/surface">
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="User ID:"
-                            android:textSize="16sp"
+                            android:textSize="15sp"
                             android:textStyle="bold"
-                            android:textColor="@color/text_secondary" />
+                            android:textColor="@color/text_light" />
 
                         <TextView
                             android:id="@+id/userIdText"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:textSize="16sp"
+                            android:textSize="15sp"
                             android:textColor="@color/text_primary"
                             tools:text="1" />
                     </LinearLayout>
@@ -138,8 +152,9 @@
                 android:layout_height="56dp"
                 android:text="@string/logout"
                 android:textSize="16sp"
-                app:cornerRadius="8dp"
-                app:backgroundTint="@color/accent" />
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                app:backgroundTint="@color/error" />
 
             <ProgressBar
                 android:id="@+id/progressBar"
@@ -147,6 +162,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="24dp"
+                android:indeterminateTint="@color/primary"
                 android:visibility="gone" />
 
         </LinearLayout>
